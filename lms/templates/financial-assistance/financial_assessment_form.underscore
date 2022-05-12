@@ -6,6 +6,34 @@
   <%  }); %>
 </div>
 
+<div class="enrollment-results">
+  <table id="enrollment-table" class="enrollment-table display compact nowrap">
+    <thead>
+      <tr>
+        <th><%- gettext('Income') %></th>
+        <th><%- gettext('Reasons') %></th>
+        <th><%- gettext('Goals') %></th>
+        <th><%- gettext('Plans') %></th>
+        <th><%- gettext('Status') %></th>
+        <th><%- gettext('Rejection Reason') %></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% applications_status_response.forEach(function (application) { %>
+      <tr>
+        <td><% print(application.income) %></td>
+        <td><% print(application.learner_reasons) %></td>
+        <td><% print(application.learner_goals) %></td>
+        <td><% print(application.learner_plans) %></td>
+        <td><% print(application.status) %></td>
+        <td><% print(application.rejection_reason) %></td>
+      </tr>
+      <% }); %>
+    </tbody>
+  </table>
+</div>
+
 <form class="financial-assistance-form" method="POST">
   <div class="js-form-feedback" aria-live="assertive" tabindex="-1">
   </div>
@@ -35,7 +63,7 @@
 	</div>
 
     <% // xss-lint: disable=underscore-not-escaped %>
-	<%= fields %> 
+	<%= fields %>
 
 	<div class="cta-wrapper clearfix">
 		<a href="<%- student_faq_url %>" class="nav-link"><%- interpolate_text(

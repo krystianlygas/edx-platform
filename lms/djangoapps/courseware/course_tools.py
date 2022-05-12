@@ -42,9 +42,9 @@ class FinancialAssistanceTool(CourseTool):
 
         # hide link if there's no ENABLE_FINANCIAL_ASSISTANCE_FORM setting (ex: Edge) or if it's False
         subset_name = 'FEATURES'
-        feature_flags = getattr(settings, subset_name)
-        if feature_flags is None or not feature_flags.get('ENABLE_FINANCIAL_ASSISTANCE_FORM'):
-            return False
+        # feature_flags = getattr(settings, subset_name)
+        # if feature_flags is None or not feature_flags.get('ENABLE_FINANCIAL_ASSISTANCE_FORM'):
+        #     return False
 
         # hide link for archived courses
         if course_overview is not None and course_overview.end is not None and now > course_overview.end:
