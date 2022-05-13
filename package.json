@@ -105,8 +105,5 @@
     "sinon": "2.3.5",
     "squirejs": "0.1.0",
     "stylelint-formatter-pretty": "1.0.3"
-  },
-  "optionalDependencies": {
-    "fsevents": "1.*.*"
   }
 }
